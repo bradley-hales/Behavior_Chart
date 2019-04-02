@@ -49,11 +49,11 @@ let app = new Vue({
         this.addedDay = '',
         this.addedWakeUp = '',
         this.addedDoseTime = '',
-        this.addedAmount = 0,
+        this.addedAmount = '',
         this.addedBedTime = '',
-        this.addedCottonBalls = 0,
+        this.addedCottonBalls = '',
         this.addedNote = '',
-        this.addedTantrums = 0,
+        this.addedTantrums = '',
         this.getEntries();
       } catch (error) {
         console.log(error);
