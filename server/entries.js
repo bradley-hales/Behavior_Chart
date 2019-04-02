@@ -52,7 +52,7 @@ router.post('/', async (req, res) => {
 });
 
 // edit
-app.put("/:id", async (req, res) => {
+router.put("/:id", async (req, res) => {
   try{
     await Entry.findOneAndUpdate({_id: req.params.id}, {$set: {date: req.body.date, day: req.body.day, wakeUp: req.body.wakeUp, doseTime: req.body.doseTime, amount: req.body.amount, bedTime: req.body.bedTime, cottonBalls: req.body.cottonBalls, note: req.body.note, tantrums: req.body.tantrums}});
   }catch (error){
