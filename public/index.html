@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Peyton's Behavior Chart</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <div class="container">
+      <h1>Peyton's Behavior Chart</h1>
+    </div>
+
+    <div id="app">
+      <div class="content">
+        <h3>Add an Entry</h3>
+        <form @submit.prevent="addEntry">
+          <input v-model="addedDate" placeholder="Date"></p>
+          <input v-model="addedDay" placeholder="Day"></p>
+          <input v-model="addedWakeUp" placeholder="Wake up time"></p>
+          <input v-model="addedDoseTime" placeholder="Time of dose"></p>
+          <input v-model="addedAmount" placeholder="amount"></p>
+          <input v-model="addedBedTime" placeholder="bed time"></p>
+          <input v-model="addedCottonBalls" placeholder="cotton balls"></p>
+          <input v-model="addedTantrums" placeholder="number of tantrums"></p>
+          <textarea v-model="addedNote" placeholder="notes"></textarea>
+          <br>
+          <br>
+          <button type="submit">Submit</button>
+        </form>
+
+        <table class="table">
+          <thead class="thead-dark">
+              <tr>
+                <th scope="col">Date</th>
+                <th scope="col">Day</th>
+                <th scope="col">Wake Up Time</th>
+                <th scope="col">Dose Time</th>
+                <th scope="col">Amount (mL)</th>
+                <th scope="col">Bed Time</th>
+                <th scope="col">Number of Cotton Balls</th>
+                <th scope="col">Notes</th>
+                <th scope="col">Number of tantrums</th>
+              </tr>
+            </thead>
+            <tbody>
+                <tr v-for="entry in entries">
+                  <td>{{entry.date}}</td>
+                  <td>{{entry.day}}</td>
+                  <td>{{entry.wakeUp}}</td>
+                  <td>{{entry.doseTime}}</td>
+                  <td>{{entry.amount}}</td>
+                  <td>{{entry.bedTime}}</td>
+                  <td>{{entry.cottonBalls}}</td>
+                  <td>{{entry.note}}</td>
+                  <td>{{entry.tantrums}}</td>
+                  <td><button @click="deleteEntry(entry)" class="delete">Delete</button></td>
+                </tr>
+                <hr>
+            </tbody>
+          </table>
+
+      </div>
+    </div>
+
+
+
+        <div class="footer">
+          <a href="https://github.com/bradley-hales/Behavior_Chart">GitHub</a>
+        </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js" integrity="sha256-mpnrJ5DpEZZkwkE1ZgkEQQJW/46CSEh/STrZKOB/qoM=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.7/vue.js" integrity="sha256-g+Q8DFAmG5+eyRPSydX0LY4TfjsL11XSDrIGerbbEdA=" crossorigin="anonymous"></script>
+    <script text="type/javascript" src="/script.js"></script>
+  </body>
+</html>
